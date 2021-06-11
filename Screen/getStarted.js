@@ -89,13 +89,14 @@ const SplashScreen = ({navigation}) => {
             <Animatable.Image 
                 animation="bounceIn"
                 duraton="2000"
-            source={require('./log.png')}
+            source={require('./logo.png')}
             style={styles.logo}
-            resizeMode="stretch"
+            resizeMode="contain"
             />
+            {/* <Text style={{fontFamily:"Orbitron-Black", color:"white",fontSize:35,top:-240,left:60}}>SARVVID</Text> */}
             <Text style={styles.title}>Store Your Files Faster and Easily In One Place !</Text>
             <View style={styles.button}>
-            <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
+            <TouchableOpacity onPress={()=>navigation.navigate('LoginSignup')}>
                 <LinearGradient
                     colors={['#05e395', '#00b3ff']}
                     style={styles.signIn}
@@ -148,15 +149,16 @@ const styles = StyleSheet.create({
       bottom:-400
   },
   logo: {
-      top:-160,
+      top:-150,
       width: (height_logo*1.7)*1.3,
+     // left:-120,
       height: height_logo*1.0
   },
   title: {
       color: 'white',
-      fontSize: 25,
-      top:-110,
-      fontWeight:'bold',
+      fontSize: 20,
+      top:-100,
+      fontFamily:"Orbitron-SemiBold",
       textAlign:'center',
   },
   text: {
@@ -169,7 +171,7 @@ const styles = StyleSheet.create({
   button: {
       alignItems: 'center',
       height:100,
-      top:-65
+      top:-55
       
   },
   signFooter: {
@@ -203,6 +205,6 @@ signFooterSub: {
   },
   textSign: {
       color: 'white',
-      fontWeight: 'bold',
-  }
+fontFamily:'Orbitron-Medium'
+    }
 });

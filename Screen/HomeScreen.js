@@ -26,7 +26,8 @@ import {
 
 
 
-  const HomeScreen = () => {
+  export default function HomeScreen() 
+   {
   const [searchQuery, setSearchQuery] = React.useState('');
 
   const onChangeSearch = query => setSearchQuery(query);
@@ -38,18 +39,22 @@ import {
 
   return (
     <View style={styles.main}>
+    <ImageBackground
+    source={require('./bluee.jpeg')}
+    style={{height:'100%',width:'100%'}}
+    >
     <Animatable.View 
             animation="bounceIn"
             style={styles.footer}
         >
-    <Text style={{top:50,color:'black',fontWeight:'bold',fontSize:25,paddingLeft:17}}>Rizky Lancelot</Text>
+    <Text style={{top:50,color:'black',fontFamily:'Orbitron-Bold',fontSize:25,paddingLeft:17}}>Rizky Lancelot</Text>
 
-    <Searchbar
+    {/* <Searchbar
       placeholder="Search"
       onChangeText={onChangeSearch}
       value={searchQuery}
       style={styles.search}
-    />
+    /> */}
 
  <View style={styles.space}>
  <View style={styles.logo_file}>
@@ -73,7 +78,7 @@ import {
             animation="bounceIn"
             style={styles.footer}
         >
-    <Text style={{top:58,color:'black',paddingLeft:17, fontWeight:'bold', fontSize:21, fontFamily:'Roboto', textShadowColor:'grey', textShadowRadius:3}}>
+    <Text style={{top:58,color:'black',paddingLeft:17,fontFamily:'Orbitron-Bold', fontSize:21, textShadowColor:'grey', textShadowRadius:3}}>
 Categories
     </Text>
     </Animatable.View>
@@ -91,7 +96,7 @@ Categories
                 style={{height:70,width:70,marginTop:-5}}
             />
                 </View>
-                <Text style={{color:'#808080', fontWeight:'bold', textAlign:'center',paddingRight:21,top:4}}>
+                <Text style={{color:'#808080',fontFamily:'Orbitron-Bold', textAlign:'center',paddingRight:21,top:4}}>
                 Document</Text>
             </Col>
             
@@ -107,7 +112,7 @@ Categories
                 style={{height:70,width:70,marginTop:-9}}
             />
                 </View>
-                <Text style={{color:'#808080', fontWeight:'bold', textAlign:'center',paddingRight:29,top:4}}>Images</Text>
+                <Text style={{color:'#808080',fontFamily:'Orbitron-Bold', textAlign:'center',paddingRight:29,top:4}}>Images</Text>
             </Col>
             <Col style={{paddingRight:10}}>
             <View style={styles.column}>
@@ -121,7 +126,7 @@ Categories
                 style={{height:70,width:70,marginTop:-5}}
             />
                 </View>
-                <Text style={{color:'#808080', fontWeight:'bold', textAlign:'center',paddingRight:21,top:4}}>
+                <Text style={{color:'#808080',fontFamily:'Orbitron-Bold', textAlign:'center',paddingRight:21,top:4}}>
                 Extras</Text>
             </Col>
         </Row>
@@ -139,7 +144,7 @@ Categories
                 style={{height:50,width:50}}
             />
                 </View>
-                <Text style={{color:'#808080', fontWeight:'bold', textAlign:'center',paddingRight:25,top:4}}>Audio</Text>
+                <Text style={{color:'#808080',fontFamily:'Orbitron-Bold', textAlign:'center',paddingRight:25,top:4}}>Audio</Text>
             </Col>
             <Col>
             <View style={styles.column}>
@@ -154,7 +159,7 @@ Categories
                 style={{height:70,width:70,top:-9}}
             />
                 </View>
-                <Text style={{color:'#808080', fontWeight:'bold', textAlign:'center',paddingRight:25,top:4}}>APK</Text>
+                <Text style={{color:'#808080',fontFamily:'Orbitron-Bold', textAlign:'center',paddingRight:25,top:4}}>APK</Text>
             </Col>
             <Col>
             <View style={styles.column}>
@@ -168,7 +173,7 @@ Categories
                 style={{height:100,width:90,marginTop:-25}}
             />
                 </View>
-                <Text style={{color:'#808080', fontWeight:'bold', textAlign:'center',fontSize:16,paddingRight:25,top:4}}>Video</Text>
+                <Text style={{color:'#808080',fontFamily:'Orbitron-Bold', textAlign:'center',fontSize:16,paddingRight:25,top:4}}>Video</Text>
             </Col>
             
         </Row>
@@ -179,13 +184,13 @@ Categories
             animation="fadeInUpBig"
            
         >
-        <Text style={{top:-55,color:'black',paddingLeft:20,fontWeight:'bold', fontSize:20, fontFamily:'Roboto', textShadowColor:'grey', textShadowRadius:3}}>
+        <Text style={{top:-75,color:'black',paddingLeft:20,fontFamily:'Orbitron-Bold', fontSize:20,textShadowColor:'grey', textShadowRadius:3}}>
 Recent Files
     </Text>
     
      
     <View style={styles.recent}>
-        <Text style={{fontWeight:'bold',fontSize:20,color:'black'}}>
+        <Text style={{fontFamily:'Orbitron-Bold',fontSize:20,color:'black'}}>
             My first.png
         </Text>
     </View>
@@ -205,7 +210,7 @@ Recent Files
 
     
 
-     <View style={{top:-155,alignItems:'flex-end',paddingRight:28}}>
+     <View style={{top:-185,alignItems:'flex-end',paddingRight:48}}>
      
      <CircleButton 
      style={{elevation:50}}
@@ -218,29 +223,28 @@ Recent Files
      iconButtonLeft={require("./videoi.png")}
      />
      </View>
-
+     
      {/* </Animatable.ScrollView> */}
 
      {/* </Animatable.View> */}
+     </ImageBackground>
  </View>
   );
 };
 
   
-export default HomeScreen;
 const {height} = Dimensions.get("screen");
 const height_logo = height * 0.03;
 const styles = StyleSheet.create({
 main:{
 flex:1,
-paddingLeft:10,
-paddingRight:10,
 },
 search:{
     top:70,
     marginLeft:17,
     marginRight:17,
-    borderColor:"#00b3ff"
+    borderColor:"#00b3ff",
+    fontFamily:'Orbitron-Bold'
   },
   row1:{
  top:20,
@@ -248,19 +252,20 @@ search:{
  justifyContent:'center'
   },
   row2:{
-    top:-58,
+    top:-78,
     alignContent:'center',
     justifyContent:'center',
     paddingRight:10
      },
   column:{
-backgroundColor:'#c9e5ee',
+backgroundColor:'#00b3ff',
 paddingTop:20,
 borderRadius:20,
 width:100,
 height:90,
-alignItems:'center'
-
+alignItems:'center',
+opacity:0.8,
+elevation:70
 },
 column2:{
     backgroundColor:'#c9e5ee',
@@ -275,7 +280,7 @@ column2:{
         backgroundColor:"#00b3ff",
         alignContent:"center",
         height:90,
-        width:350,
+        width:360,
         paddingLeft:20,
         marginLeft:20,
         marginRight:10,
@@ -291,7 +296,7 @@ space2:{
     height:144,
     width:340,
     paddingLeft:30,
-    marginLeft:25,
+    marginLeft:38,
     marginRight:17,
     borderRadius:10,
     opacity:0.2,
@@ -324,21 +329,20 @@ space2:{
   text_space:{
     color: 'white',
     fontSize: 20,
-    fontWeight:'bold',
+    fontFamily:'Orbitron-Bold',
     textAlign:'center',
     height:90,
-    padding:10,
+    padding:20,
     top:-34,
     textAlign:'right',
     paddingRight:100,
     textShadowRadius:4,
     textShadowColor:"white",
-
 },
 text_body:{
     color: 'white',
     fontSize: 12,
-    fontWeight:'bold',
+    fontFamily:'Orbitron-Regular',
     textAlign:'center',
     height:90,
     padding:10,

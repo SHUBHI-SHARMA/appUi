@@ -15,8 +15,8 @@ import LoginScreen from './Screen/LoginScreen';
 import getStarted from './Screen/getStarted';
 import SignUpScreen from './Screen/SignUpScreen';
 import HomeScreen from './Screen/HomeScreen';
-
-
+import LoginSignup from './Screen/LoginSignup';
+import NavigationBar from './Screen/NavigationBar'
 
 const Stack = createStackNavigator();
 
@@ -42,7 +42,14 @@ const Auth = () => {
   name="Home"
   component={HomeScreen}
 />
-
+<Stack.Screen
+  name="LoginSignup"
+  component={LoginSignup}
+/>
+<Stack.Screen
+  name="Navbar"
+  component={NavigationBar}
+/>
 
       {/* <Stack.Screen
         name="RegisterScreen"
